@@ -1,5 +1,6 @@
 'use client';
 import { socket } from '@/utils/socket/socket';
+import clsx from 'clsx';
 import { KonvaEventObject } from 'konva/lib/Node';
 import React, { useEffect } from 'react';
 import { Layer, Line, Stage } from 'react-konva';
@@ -9,7 +10,7 @@ interface ILine {
 	points: number[];
 }
 
-const Canvas = () => {
+const Canvas = ({ className }: { className?: string }) => {
 	const [tool, setTool] = React.useState<'pen' | 'eraser'>('pen');
 	const [lines, setLines] = React.useState<ILine[]>([]);
 	const [historyScribbles, setHistoryScribbles] = React.useState<ILine[]>([]);
@@ -85,44 +86,31 @@ const Canvas = () => {
 		}
 	}
 	return (
-		<div>
-			<button onClick={handleUndo}>Undo</button>
-			<button onClick={handleRedo}>Redo</button>
-			<div className='w-fit shadow-lg'>
-				<Stage
-					width={500}
-					height={500}
-					onMouseDown={handleMouseDown}
-					onMousemove={handleMouseMove}
-					onMouseup={handleMouseUp}
-					onMouseLeave={handleMouseUp}
-				>
-					<Layer>
-						{lines.map((line, i) => (
-							<Line
-								key={i}
-								points={line.points}
-								stroke='#df4b26'
-								strokeWidth={5}
-								tension={0.5}
-								lineCap='round'
-								globalCompositeOperation={
-									line.tool === 'eraser' ? 'destination-out' : 'source-over'
-								}
-							/>
-						))}
-					</Layer>
-				</Stage>
-			</div>
-			<select
-				value={tool}
-				onChange={(e) => {
-					setTool(e.target.value as 'eraser' | 'pen');
-				}}
+		<div className={clsx('w-full shadow-lg', className)}>
+			<Stage
+				width={900}
+				height={350}
+				onMouseDown={handleMouseDown}
+				onMousemove={handleMouseMove}
+				onMouseup={handleMouseUp}
+				onMouseLeave={handleMouseUp}
 			>
-				<option value='pen'>Pen</option>
-				<option value='eraser'>Eraser</option>
-			</select>
+				<Layer>
+					{lines.map((line, i) => (
+						<Line
+							key={i}
+							points={line.points}
+							stroke='#df4b26'
+							strokeWidth={5}
+							tension={0.5}
+							lineCap='round'
+							globalCompositeOperation={
+								line.tool === 'eraser' ? 'destination-out' : 'source-over'
+							}
+						/>
+					))}
+				</Layer>
+			</Stage>
 		</div>
 	);
 };
