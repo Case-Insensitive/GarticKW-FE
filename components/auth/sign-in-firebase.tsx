@@ -15,7 +15,7 @@ const SignInFirebase = () => {
 				console.log(token);
 				const user = result.user;
 				console.log(user);
-				router.push('/firebase');
+				router.push('/play');
 			})
 			.catch((error) => {
 				console.log(error);
