@@ -1,5 +1,17 @@
+import { ICategoryButton } from '@/app/(protected)/(main)/choose-category/components/category-button/categoryButton.type';
 import { IChatBox } from '@/app/(protected)/(main)/play/components/chat-box/chatBox.type';
 import { IRankCard } from '@/components/rank-board/rank-card/rankCard.type';
+
+export const categoryButtons: ICategoryButton[] = [
+	{ imgSrc: '/choose-category/games_1 1.png', title: 'Video Games' },
+	{ imgSrc: '/choose-category/games_1 1.png', title: 'Video Games' },
+	{ imgSrc: '/choose-category/games_1 1.png', title: 'Video Games' },
+	{ imgSrc: '/choose-category/games_1 1.png', title: 'Video Games' },
+	{ imgSrc: '/choose-category/games_1 1.png', title: 'Video Games' },
+	{ imgSrc: '/choose-category/games_1 1.png', title: 'Video Games' },
+	{ imgSrc: '/choose-category/games_1 1.png', title: 'Video Games' },
+	{ imgSrc: '/choose-category/games_1 1.png', title: 'Video Games' },
+];
 
 export const guessChats: IChatBox['chats'] = [
 	{ user: 'AsepBakwan', color: '4ADE80', message: 'Jaguar' },

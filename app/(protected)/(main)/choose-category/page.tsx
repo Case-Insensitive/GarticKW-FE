@@ -4,9 +4,9 @@ import CategoryContainer from './components/category-container';
 
 const page = () => {
 	return (
-		<div className='flex items-stretch w-full gap-5 flex-col'>
-			<GameSettings />
-			<CategoryContainer />
+		<div className='flex items-stretch w-full gap-5 flex-col	 h-full'>
+			<GameSettings className='w-full flex bg-[#524DBE] rounded-xl' />
+			<CategoryContainer className='border-[#524DBE] rounded-xl flex flex-col justify-between border-[3px] p-5 h-full' />
 		</div>
 	);
 };

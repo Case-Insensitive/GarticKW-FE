@@ -1,9 +1,10 @@
+import clsx from 'clsx';
 import Image from 'next/image';
 import React from 'react';
 
-const GameSettings = () => {
+const GameSettings = ({ className }: { className?: string }) => {
 	return (
-		<div className='w-full flex bg-[#524DBE]  rounded-xl'>
+		<div className={clsx(className)}>
 			<div className='flex-1 relative'>
 				<Image
 					alt='object-2'
@@ -28,15 +29,23 @@ const GameSettings = () => {
 					</h2>
 				</div>
 				<div className='flex w-full gap-5 justify-between '>
-                    <div className='flex-1'>
-                        <p className='text-white text-lg font-bold text-center'>Max Point</p>
-                        <p className='bg-[#FFFFFF] rounded-lg py-2 font-[900] text-2xl text-[#D9D9D9] text-center'>500</p>
-                    </div>
-                    <div className='flex-1'>
-                        <p className='text-white text-lg font-bold text-center'>Public Room</p>
-                        <p className='bg-[#FFFFFF] rounded-lg py-2 font-[900] text-2xl text-[#FF4B91] text-center'>NO</p>
-                    </div>
-                </div>
+					<div className='flex-1'>
+						<p className='text-white text-lg font-bold text-center'>
+							Max Point
+						</p>
+						<p className='bg-[#FFFFFF] rounded-lg py-2 font-[900] text-2xl text-[#D9D9D9] text-center'>
+							500
+						</p>
+					</div>
+					<div className='flex-1'>
+						<p className='text-white text-lg font-bold text-center'>
+							Public Room
+						</p>
+						<p className='bg-[#FFFFFF] rounded-lg py-2 font-[900] text-2xl text-[#FF4B91] text-center'>
+							NO
+						</p>
+					</div>
+				</div>
 			</div>
 			<div className='flex-1 relative'>
 				<Image
