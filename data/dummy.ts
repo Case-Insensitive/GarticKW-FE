@@ -1,4 +1,4 @@
-import { IChatBox } from '@/app/(protected)/play/components/chat-box/chatBox.type';
+import { IChatBox } from '@/app/(protected)/(main)/play/components/chat-box/chatBox.type';
 import { IRankCard } from '@/components/rank-board/rank-card/rankCard.type';
 
 export const guessChats: IChatBox['chats'] = [
