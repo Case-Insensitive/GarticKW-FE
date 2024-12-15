@@ -1,21 +1,22 @@
 import React from 'react';
 import ButtonColor from './button-color/button-color';
-
+import { colors } from '@/data/colors';
+import { useMainboardStore } from '@/store/main';
 const ColorPicker = () => {
+	const { color: activeColor, setColor } = useMainboardStore();
+	const handleColorClick = (color: string) => {
+		setColor(color);
+	};
 	return (
 		<div className='grid grid-cols-6 gap-5'>
-			<ButtonColor isActive color='000000' />
-			<ButtonColor color='794E2D' />
-			<ButtonColor color='FF0000' />
-			<ButtonColor color='FFD300' />
-			<ButtonColor color='0AEFFF' />
-			<ButtonColor color='580AFF' />
-			<ButtonColor color='D9D9D9' />
-			<ButtonColor color='666666' />
-			<ButtonColor color='FF8700' />
-			<ButtonColor color='A1FF0A' />
-			<ButtonColor color='147DF5' />
-			<ButtonColor color='BE0AFF' />
+			{colors.map((color) => (
+				<ButtonColor
+					key={color}
+					color={color}
+					isActive={activeColor === color}
+					onClick={() => handleColorClick(color)}
+				/>
+			))}
 		</div>
 	);
 };
