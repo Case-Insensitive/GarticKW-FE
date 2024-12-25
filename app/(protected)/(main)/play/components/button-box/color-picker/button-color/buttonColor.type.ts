@@ -1,4 +1,4 @@
 export type IButtonColor = {
-	color: string;
-	isActive?: boolean;
+  color: string;
+  isActive?: boolean;
 };

@@ -1,4 +1,4 @@
-import withAuth from 'next-auth/middleware';
-import { pages } from './config/pagesNextAuthOptions';
+import withAuth from "next-auth/middleware";
+import { pages } from "./config/pagesNextAuthOptions";
 export default withAuth({ pages: pages });
-export const config = { matcher: ['/example'] };
+export const config = { matcher: ["/example"] };

@@ -1,5 +1,5 @@
 export type ICategoryButton = {
-	id?: string;
-	imgSrc: string;
-	title: string;
+  id?: string;
+  imgSrc: string;
+  title: string;
 };
