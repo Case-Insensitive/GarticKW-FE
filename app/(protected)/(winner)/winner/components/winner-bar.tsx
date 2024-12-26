@@ -1,25 +1,40 @@
 import React from "react";
 
-type WinnerBarProps = React.HTMLAttributes<HTMLDivElement> & {
+type WinnerBarProps = {
+  widthTw?: number | string;
+  heightTw?: number | string;
+  barColorTw: string;
   points: number;
-  finalHeightPercentage: number;
+  barInitialHeight?: number | string;
+  barFinalHeight: number | string;
+  topElement?: React.ReactNode;
 };
 
 const WinnerBar = ({
-  className,
+  widthTw = "fit",
+  heightTw = "fit",
+  barColorTw,
   points,
-  finalHeightPercentage,
+  barInitialHeight = "55px",
+  barFinalHeight,
+  topElement,
 }: WinnerBarProps) => {
   return (
     <div
-      className={`winner-bar ${className}`}
-      style={
-        {
-          "--final-height": `${finalHeightPercentage}%`,
-        } as React.CSSProperties
-      }
+      className={`w-${widthTw} h-${heightTw} flex flex-col justify-end border-2 border-black border-solid`}
     >
-      <span>{points} points</span>
+      {topElement}
+      <div
+        className={`winner-bar ${barColorTw}`}
+        style={
+          {
+            "--initial-height": `${barInitialHeight}`,
+            "--final-height": `${barFinalHeight}`,
+          } as React.CSSProperties
+        }
+      >
+        <span>{points} points</span>
+      </div>
     </div>
   );
 };

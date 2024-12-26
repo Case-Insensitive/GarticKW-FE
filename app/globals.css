@@ -9,7 +9,7 @@
 
 @keyframes grow {
   0% {
-    height: 55px;
+    height: var(--initial-height);
   }
 
   100% {
