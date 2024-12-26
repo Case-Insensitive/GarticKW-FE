@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.winner-bar {
+  @apply w-fit h-[55px] ease-linear ;
+  animation: grow 2s forwards;
+}
+
+@keyframes grow {
+  0% {
+    height: 55px;
+  }
+
+  100% {
+    height: var(--final-height);
+  }
+}
