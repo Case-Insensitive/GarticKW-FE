@@ -1,4 +1,4 @@
-import WinnerRibbon from "./components/WinnerRibbon";
+import WinnerRibbon from "./components/winner-ribbon";
 
 const WinnerPage = () => {
   return <>
