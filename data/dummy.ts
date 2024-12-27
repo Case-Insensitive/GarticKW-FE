@@ -1,5 +1,6 @@
 import { ICategoryButton } from "@/app/(protected)/(main)/choose-category/components/category-button/categoryButton.type";
 import { IChatBox } from "@/app/(protected)/(main)/play/components/chat-box/chatBox.type";
+import { IWinner } from "@/app/(protected)/(winner)/winner/components/winner-bars-group/winnerBarsGroup.type";
 import { IRankCard } from "@/components/rank-board/rank-card/rankCard.type";
 
 export const categoryButtons: ICategoryButton[] = [
@@ -89,3 +90,27 @@ export const ranks: IRankCard[] = [
     userName: "LinaCacing",
   },
 ];
+
+export const winners: IWinner[] = [
+  {
+    id: "1",
+    photo: "/dummy/pic.png",
+    points: 1324,
+    rank: 1,
+    userName: "Bambang Subandi",
+  },
+  {
+    id: "2",
+    photo: "/dummy/pic.png",
+    points: 782,
+    rank: 2,
+    userName: "Bebek Goreng",
+  },
+  {
+    id: "3",
+    photo: "/dummy/pic.png",
+    points: 123,
+    rank: 3,
+    userName: "LinaCacing",
+  },
+]
