@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const WinnerRibbon = () => {
+const WinnerRibbon: React.FC = () => {
   return (
     <div className="flex justify-center">
       <div className={`relative mt-[62px] w-[55%] h-[62px]`}>

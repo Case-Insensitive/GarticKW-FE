@@ -1,5 +1,3 @@
-import React from "react";
-
 type WinnerBarProps = {
   widthTw?: number | string;
   heightTw?: number | string;
@@ -10,7 +8,7 @@ type WinnerBarProps = {
   topElement?: React.ReactNode;
 };
 
-const WinnerBar = ({
+const WinnerBar: React.FC<WinnerBarProps> = ({
   widthTw = "fit",
   heightTw = "fit",
   barColorTw,
@@ -18,11 +16,9 @@ const WinnerBar = ({
   barInitialHeight = "55px",
   barFinalHeight,
   topElement,
-}: WinnerBarProps) => {
+}) => {
   return (
-    <div
-      className={`w-${widthTw} h-${heightTw} flex flex-col justify-end`}
-    >
+    <div className={`w-${widthTw} h-${heightTw} flex flex-col justify-end`}>
       {topElement}
       <div
         className={`winner-bar ${barColorTw} w-full`}
