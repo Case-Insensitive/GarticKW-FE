@@ -1,19 +1,19 @@
 'use client';
+import { useMainboardStore } from '@/store/main';
 import { socket } from '@/utils/socket/socket';
 import clsx from 'clsx';
 import { KonvaEventObject } from 'konva/lib/Node';
 import React, { useEffect } from 'react';
 import { Layer, Line, Stage } from 'react-konva';
 
-interface ILine {
+export interface ILine {
 	tool: 'pen' | 'eraser';
 	points: number[];
+	color: string;
 }
 
 const Canvas = ({ className }: { className?: string }) => {
-	const [tool, setTool] = React.useState<'pen' | 'eraser'>('pen');
-	const [lines, setLines] = React.useState<ILine[]>([]);
-	const [historyScribbles, setHistoryScribbles] = React.useState<ILine[]>([]);
+	const { color, lines, setLines, tool } = useMainboardStore();
 	const isDrawing = React.useRef(false);
 
 	useEffect(() => {
@@ -29,6 +29,7 @@ const Canvas = ({ className }: { className?: string }) => {
 		return () => {
 			socket.off('connect', onConnect);
 		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	const handleMouseDown = (e: KonvaEventObject<MouseEvent>) => {
@@ -37,7 +38,7 @@ const Canvas = ({ className }: { className?: string }) => {
 		if (stage !== null) {
 			const pos = stage.getPointerPosition();
 			if (pos) {
-				setLines([...lines, { tool, points: [pos.x, pos.y] }]);
+				setLines([...lines, { tool, points: [pos.x, pos.y], color: color }]);
 			}
 		}
 	};
@@ -64,27 +65,29 @@ const Canvas = ({ className }: { className?: string }) => {
 	const handleMouseUp = () => {
 		isDrawing.current = false;
 	};
-	function handleUndo() {
-		if (lines.length > 0) {
-			const curr = [...lines];
-			const item = curr.pop();
-			if (item) {
-				setHistoryScribbles((prev) => [...prev, item]);
-			}
-			setLines(curr);
-		}
-	}
+	// function handleUndo() {
+	// 	if (lines.length > 0) {
+	// 		const curr = [...lines];
+	// 		const item = curr.pop();
+	// 		if (item) {
+	// 			const newHistory = [...historyScribbles, item];
+	// 			setHistoryScribbles(newHistory);
+	// 		}
+	// 		setLines(curr);
+	// 	}
+	// }
 
-	function handleRedo() {
-		if (historyScribbles.length > 0) {
-			const curr = [...historyScribbles];
-			const item = curr.pop();
-			if (item) {
-				setLines((prev) => [...prev, item]);
-			}
-			setHistoryScribbles(curr);
-		}
-	}
+	// function handleRedo() {
+	// 	if (historyScribbles.length > 0) {
+	// 		const curr = [...historyScribbles];
+	// 		const item = curr.pop();
+	// 		if (item) {
+	// 			const newItem = [...lines, item];
+	// 			setLines(newItem);
+	// 		}
+	// 		setHistoryScribbles(curr);
+	// 	}
+	// }
 	return (
 		<div className={clsx('w-full shadow-lg', className)}>
 			<Stage
@@ -100,7 +103,7 @@ const Canvas = ({ className }: { className?: string }) => {
 						<Line
 							key={i}
 							points={line.points}
-							stroke='#df4b26'
+							stroke={`#${line.color}`}
 							strokeWidth={5}
 							tension={0.5}
 							lineCap='round'

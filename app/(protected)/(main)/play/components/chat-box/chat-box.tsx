@@ -17,7 +17,7 @@ const ChatBox = ({
 			<div className='absolute shadow-[0px_4px_4px_0px_rgba(0,0,0,0.2)] bg-[#524DBE] py-1.5 rounded-xl text-white font-[900] text-2xl w-[90%] left-[50%] -translate-x-[50%] -top-6'>
 				<p className='text-center'>{title}</p>
 			</div>
-			<div className='max-h-24 mt-3 overflow-y-auto'>
+			<div className='max-h-36 mt-3 overflow-y-auto'>
 				{chats.map((el, index) => {
 					return (
 						<div

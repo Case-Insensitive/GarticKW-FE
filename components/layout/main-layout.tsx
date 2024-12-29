@@ -1,15 +1,28 @@
 import React, { ReactNode } from 'react';
 import Image from 'next/image';
-import TopButtons from './play/components/top-buttons/top-buttons';
+import TopButtons from '@/app/(protected)/(main)/play/components/top-buttons/top-buttons';
 import Navigation from '@/components/navigation/navigation';
 import RankBoard from '@/components/rank-board/rank-board';
-const MainPageLayout = ({ children }: { children: ReactNode }) => {
+import clsx from 'clsx';
+const MainLayout = ({
+	children,
+	imgUrl,
+	positionImg,
+}: {
+	children: ReactNode;
+	imgUrl: string;
+	positionImg: 'top-left' | 'bottom-right';
+}) => {
 	return (
 		<main className='bg-[#0802A3] min-h-screen relative flex justify-center items-center py-5'>
 			<Image
 				alt='image animation'
-				src={'/play/OBJECTS.png'}
-				className='absolute z-30 top-[15%] left-0'
+				src={imgUrl}
+				className={clsx(
+					positionImg === 'top-left'
+						? 'absolute z-30 top-[15%] left-0'
+						: 'absolute z-30 bottom-[15%] right-0'
+				)}
 				width={150}
 				height={150}
 			/>
@@ -30,4 +43,4 @@ const MainPageLayout = ({ children }: { children: ReactNode }) => {
 	);
 };
 
-export default MainPageLayout;
+export default MainLayout;

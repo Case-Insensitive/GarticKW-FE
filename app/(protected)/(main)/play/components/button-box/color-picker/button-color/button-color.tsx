@@ -6,9 +6,13 @@ const ButtonColor = ({
 	color,
 	className,
 	isActive = false,
-}: IButtonColor & { className?: string }) => {
+	...props
+}: IButtonColor & {
+	className?: string;
+}) => {
 	return (
 		<button
+			{...props}
 			className={clsx(
 				'h-10 w-10 rounded-lg',
 				isActive ? 'border-2 border-white' : '',
