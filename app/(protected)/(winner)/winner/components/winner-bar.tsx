@@ -21,11 +21,11 @@ const WinnerBar = ({
 }: WinnerBarProps) => {
   return (
     <div
-      className={`w-${widthTw} h-${heightTw} flex flex-col justify-end border-2 border-black border-solid`}
+      className={`w-${widthTw} h-${heightTw} flex flex-col justify-end`}
     >
       {topElement}
       <div
-        className={`winner-bar ${barColorTw}`}
+        className={`winner-bar ${barColorTw} w-full`}
         style={
           {
             "--initial-height": `${barInitialHeight}`,

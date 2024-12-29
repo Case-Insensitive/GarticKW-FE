@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .winner-bar {
-  @apply w-fit h-[55px] ease-linear ;
+  @apply h-[55px] ease-linear ;
   animation: grow 2s forwards;
 }
 
