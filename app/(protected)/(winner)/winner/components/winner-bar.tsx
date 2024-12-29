@@ -30,7 +30,7 @@ const WinnerBar: React.FC<WinnerBarProps> = ({
         <ProfileImage imgSrc={imgSrc} imgAlt={imgAlt} delay={"2s"} />
       </div>
       <div
-        className={`winner-bar ${barColorTw} w-full flex`}
+        className={`winner-bar h-[55px] ${barColorTw} w-full flex`}
         style={
           {
             "--initial-height": `${barInitialHeight}`,

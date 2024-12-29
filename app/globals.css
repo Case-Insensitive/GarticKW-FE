@@ -3,8 +3,23 @@
 @tailwind utilities;
 
 .winner-bar {
-  @apply h-[55px] ease-linear ;
   animation: grow 2s forwards;
+  animation-delay: 2s;
+}
+
+.winner-profile-img-cover {
+  animation: fade-out 2s forwards;
+  animation-delay: 2s;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes grow {

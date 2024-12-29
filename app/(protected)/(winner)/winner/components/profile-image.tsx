@@ -13,7 +13,9 @@ const ProfileImage: React.FC<ProfileImageProps> = ({
   imgAlt,
 }) => {
   return (
-    <div className={`relative w-full h-[94px] ${className} flex justify-center`}>
+    <div
+      className={`relative w-full h-[94px] ${className} flex justify-center`}
+    >
       <Image
         alt={imgAlt}
         src={imgSrc}
@@ -21,6 +23,7 @@ const ProfileImage: React.FC<ProfileImageProps> = ({
         width={50}
         height={50}
       />
+      <div className="absolute w-[94px] h-[94px] rounded-full bg-[#d9d9d9] winner-profile-img-cover"></div>
     </div>
   );
 };
