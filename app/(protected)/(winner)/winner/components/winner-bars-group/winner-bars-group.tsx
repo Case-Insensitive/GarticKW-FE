@@ -1,7 +1,8 @@
 import WinnerBar from "../winner-bar";
 import { IWinner } from "./winnerBarsGroup.type";
 
-type WinnerBarsGroupProps = React.HTMLAttributes<HTMLDivElement> & {
+type WinnerBarsGroupProps = {
+  className?: React.HTMLAttributes<HTMLDivElement>[`className`];
   winners: IWinner[];
 };
 
