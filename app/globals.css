@@ -12,6 +12,16 @@
   animation-delay: 2s;
 }
 
+.standing-stickman {
+  animation: standing-stickman-disappear 0s forwards;
+  animation-delay: 4s;
+}
+
+.worshipping-stickman {
+  animation: worshipping-stickman-appear 0s forwards;
+  animation-delay: 4s;
+}
+
 @keyframes fade-out {
   0% {
     opacity: 1;
@@ -29,5 +39,25 @@
 
   100% {
     height: var(--final-height);
+  }
+}
+
+@keyframes standing-stickman-disappear {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes worshipping-stickman-appear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

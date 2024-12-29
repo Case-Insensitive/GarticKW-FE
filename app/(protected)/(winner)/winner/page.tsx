@@ -3,6 +3,7 @@ import WinnerBarsGroup from "./components/winner-bars-group/winner-bars-group";
 import WinnerRibbon from "./components/winner-ribbon";
 import FootQuote from "./components/foot-quote";
 import Image from "next/image";
+import StickMan from "./components/stick-man";
 
 const WinnerPage: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const WinnerPage: React.FC = () => {
       <WinnerRibbon className="relative" />
       <WinnerBarsGroup winners={winners} className="h-[500px] relative" />
       <FootQuote className="relative pt-4" />
+      <StickMan />
     </div>
   );
 };
