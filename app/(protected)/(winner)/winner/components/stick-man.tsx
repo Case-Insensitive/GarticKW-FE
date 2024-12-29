@@ -15,6 +15,7 @@ const StickMan: React.FC = () => {
         alt={"long live the king"}
         width={1280}
         height={720}
+        unoptimized
         className="absolute w-[600px] bottom-[40px] left-[-150px] opacity-0 worshipping-stickman"
       />
     </>
