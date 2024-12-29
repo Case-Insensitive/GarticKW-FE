@@ -113,4 +113,4 @@ export const winners: IWinner[] = [
     rank: 3,
     userName: "LinaCacing",
   },
-]
+];
