@@ -25,7 +25,7 @@ const WinnerBar = ({
     >
       {topElement}
       <div
-        className={`winner-bar bg-${barColorTw}`}
+        className={`winner-bar ${barColorTw}`}
         style={
           {
             "--initial-height": `${barInitialHeight}`,
