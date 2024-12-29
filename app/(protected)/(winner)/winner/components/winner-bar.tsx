@@ -1,3 +1,5 @@
+import ProfileImage from "./profile-image";
+
 type WinnerBarProps = {
   widthTw?: number | string;
   heightTw?: number | string;
@@ -6,6 +8,8 @@ type WinnerBarProps = {
   barInitialHeight?: number | string;
   barFinalHeight: number | string;
   topElement?: React.ReactNode;
+  imgSrc: string;
+  imgAlt: string;
 };
 
 const WinnerBar: React.FC<WinnerBarProps> = ({
@@ -16,12 +20,17 @@ const WinnerBar: React.FC<WinnerBarProps> = ({
   barInitialHeight = "55px",
   barFinalHeight,
   topElement,
+  imgSrc,
+  imgAlt,
 }) => {
   return (
     <div className={`w-${widthTw} h-${heightTw} flex flex-col justify-end`}>
-      {topElement}
+      <div className="realtive">
+        {topElement}
+        <ProfileImage imgSrc={imgSrc} imgAlt={imgAlt} delay={"2s"} />
+      </div>
       <div
-        className={`winner-bar ${barColorTw} w-full`}
+        className={`winner-bar ${barColorTw} w-full flex`}
         style={
           {
             "--initial-height": `${barInitialHeight}`,
@@ -29,7 +38,9 @@ const WinnerBar: React.FC<WinnerBarProps> = ({
           } as React.CSSProperties
         }
       >
-        <span>{points} points</span>
+        <div className="font-black text-center w-full pt-3">
+          {points} points
+        </div>
       </div>
     </div>
   );

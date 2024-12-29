@@ -18,32 +18,38 @@ const WinnerBarsGroup: React.FC<WinnerBarsGroupProps> = ({
       <WinnerBar
         barColorTw={"bg-[#FF7676]"}
         points={sortedWinners[1].points}
-        topElement={
-          <div className="w-[50px] h-[min(30%,130px)] bg-teal-400">test</div>
-        }
+        // topElement={
+        //   <div className="w-[50px] h-[min(30%,130px)] bg-teal-400">test</div>
+        // }
         barFinalHeight={`calc(55px + ${sortedWinners[1].points / sortedWinners[0].points} * (100% - 55px - min(30%, 130px)))`}
         widthTw={"full"}
         heightTw={"full"}
+        imgSrc={sortedWinners[1].photo}
+        imgAlt={sortedWinners[1].userName}
       />
       <WinnerBar
         barColorTw={"bg-[#FF4B91]"}
         points={sortedWinners[0].points}
-        topElement={
-          <div className="w-[50px] h-[min(30%,130px)] bg-teal-400">test</div>
-        }
+        // topElement={
+        //   <div className="w-[50px] h-[min(30%,130px)] bg-teal-400">test</div>
+        // }
         barFinalHeight={`calc(55px + (100% - 55px - min(30%, 130px)))`}
         widthTw={"full"}
         heightTw={"full"}
+        imgSrc={sortedWinners[0].photo}
+        imgAlt={sortedWinners[0].userName}
       />
       <WinnerBar
         barColorTw={"bg-[#FFCD4B]"}
         points={sortedWinners[2].points}
-        topElement={
-          <div className="w-[50px] h-[min(30%,130px)] bg-teal-400">test</div>
-        }
+        // topElement={
+        //   <div className="w-[50px] h-[min(30%,130px)] bg-teal-400">test</div>
+        // }
         barFinalHeight={`calc(55px + ${sortedWinners[2].points / sortedWinners[0].points} * (100% - 55px - min(30%, 130px)))`}
         widthTw={"full"}
         heightTw={"full"}
+        imgSrc={sortedWinners[2].photo}
+        imgAlt={sortedWinners[2].userName}
       />
     </div>
   );
