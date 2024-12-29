@@ -16,7 +16,7 @@ const WinnerPage: React.FC = () => {
       />
       <WinnerRibbon className="relative" />
       <WinnerBarsGroup winners={winners} className="h-[500px] relative" />
-      <FootQuote className="relative" />
+      <FootQuote className="relative pt-4" />
     </div>
   );
 };

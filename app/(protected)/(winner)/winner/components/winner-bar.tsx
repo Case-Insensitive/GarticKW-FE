@@ -25,7 +25,7 @@ const WinnerBar: React.FC<WinnerBarProps> = ({
 }) => {
   return (
     <div className={`w-${widthTw} h-${heightTw} flex flex-col justify-end`}>
-      <div className="realtive">
+      <div className="realtive h-[130px] flex flex-col justify-end">
         {topElement}
         <ProfileImage imgSrc={imgSrc} imgAlt={imgAlt} delay={"2s"} />
       </div>
@@ -38,7 +38,7 @@ const WinnerBar: React.FC<WinnerBarProps> = ({
           } as React.CSSProperties
         }
       >
-        <div className="font-black text-center w-full pt-3">
+        <div className="font-black text-center text-2xl w-full pt-3">
           {points} points
         </div>
       </div>
