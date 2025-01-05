@@ -14,6 +14,7 @@
     "gartic-next-fe": "file:",
     "jsonwebtoken": "^9.0.2",
     "konva": "^9.3.16",
+    "lottie-react": "^2.4.0",
     "next": "14.2.18",
     "next-auth": "^4.24.10",
     "react": "^18",
