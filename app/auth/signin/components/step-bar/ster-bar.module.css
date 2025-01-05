@@ -1,0 +1,15 @@
+.animated-bar {
+  border: linear-gradient(to right, yellow 0%, white 100%);
+  background-size: 200% 100%;
+  animation: colorShift 2s linear infinite;
+  border: 1px solid #ccc;
+}
+
+@keyframes colorShift {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
