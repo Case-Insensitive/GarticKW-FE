@@ -1,9 +1,9 @@
-import SignIn from "@/components/auth/sign-in";
 import SignInFirebase from "@/components/auth/sign-in-firebase";
 import React from "react";
 import TopUser from "./components/top-global-leaderboard/top-global-leaderboard";
 import Instructions from "./components/instructions/instructions";
 import { TUserTopRanks } from "./type/type-top-users";
+import LayoutLoginDashboard from "@/components/layout-login-dashboard/page";
 
 const SignInPage = async () => {
   const dummyUserTopRanks: TUserTopRanks[] = [
@@ -27,11 +27,7 @@ const SignInPage = async () => {
     },
   ];
   return (
-    <main className="bg-[#0802A3] h-screen flex flex-col items-center justify-center ">
-      <header className="flex flex-col justify-center mb-6 scale-90">
-        <img src="/signin/headers_1.png" alt="" />
-        <img src="/signin/headers_2.png" alt="" />
-      </header>
+    <LayoutLoginDashboard>
       <section className="content flex flex-col md:flex-row text-white gap-x-3">
         <div>
           <section className="login-firebase bg-[#524DBE] rounded-[30px] p-4 mb-3 text-center">
@@ -61,21 +57,7 @@ const SignInPage = async () => {
           <Instructions />
         </section>
       </section>
-      <footer className="flex justify-between text-white gap-x-4 mt-4">
-        <p>Made with love and patience</p>
-        <p>
-          @henrykev_ @centwong_ @putu_arrtha @naufaladib @nur.al_azhr
-          @rafly.ra.af
-        </p>
-      </footer>
-      <div>
-        <img
-          src="/signin/footers.png"
-          alt=""
-          className="fixed bottom-0 left-12"
-        />
-      </div>
-    </main>
+    </LayoutLoginDashboard>
   );
 };
 
